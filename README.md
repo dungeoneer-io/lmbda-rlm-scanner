@@ -1,4 +1,4 @@
-# lmbda-rlm-scanner
+# lmda-rlm-scanner
 
 ### Repo features
 - NodeJS project using blizzardjs and dio-utils
