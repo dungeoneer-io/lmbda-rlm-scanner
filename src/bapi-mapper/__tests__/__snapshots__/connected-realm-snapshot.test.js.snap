@@ -1,0 +1,140 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`convertIndexResultsToCrlmSnapshot converts array to nested object in snapshot 1`] = `
+{
+  "data": [
+    {
+      "id": 11,
+      "realms": [
+        {
+          "category": "United States",
+          "crlm": 11,
+          "id": 11,
+          "locale": "enUS",
+          "name": "Tichondrius",
+          "region": 1,
+          "slug": "tichondrius",
+          "timezone": "America/Los_Angeles",
+          "type": "NORMAL",
+        },
+      ],
+    },
+    {
+      "id": 99,
+      "realms": [
+        {
+          "category": "United States",
+          "crlm": 99,
+          "id": 99,
+          "locale": "enUS",
+          "name": "Llane",
+          "region": 1,
+          "slug": "llane",
+          "timezone": "America/New_York",
+          "type": "NORMAL",
+        },
+        {
+          "category": "United States",
+          "crlm": 99,
+          "id": 1297,
+          "locale": "enUS",
+          "name": "Arygos",
+          "region": 1,
+          "slug": "arygos",
+          "timezone": "America/New_York",
+          "type": "NORMAL",
+        },
+      ],
+    },
+    {
+      "id": 1070,
+      "realms": [
+        {
+          "category": "United States",
+          "crlm": 1070,
+          "id": 1070,
+          "locale": "enUS",
+          "name": "Alexstrasza",
+          "region": 1,
+          "slug": "alexstrasza",
+          "timezone": "America/Chicago",
+          "type": "NORMAL",
+        },
+        {
+          "category": "United States",
+          "crlm": 1070,
+          "id": 1563,
+          "locale": "enUS",
+          "name": "Terokkar",
+          "region": 1,
+          "slug": "terokkar",
+          "timezone": "America/Chicago",
+          "type": "NORMAL",
+        },
+      ],
+    },
+  ],
+  "stamp": 434484600000,
+  "type": "ConnectedRealmList",
+}
+`;
+
+exports[`extractAllRealmsFromCrlmSnapshot flatmaps out the realms in the snapshot 1`] = `
+[
+  {
+    "category": "United States",
+    "crlm": 11,
+    "id": 11,
+    "locale": "enUS",
+    "name": "Tichondrius",
+    "region": 1,
+    "slug": "tichondrius",
+    "timezone": "America/Los_Angeles",
+    "type": "NORMAL",
+  },
+  {
+    "category": "United States",
+    "crlm": 99,
+    "id": 99,
+    "locale": "enUS",
+    "name": "Llane",
+    "region": 1,
+    "slug": "llane",
+    "timezone": "America/New_York",
+    "type": "NORMAL",
+  },
+  {
+    "category": "United States",
+    "crlm": 99,
+    "id": 1297,
+    "locale": "enUS",
+    "name": "Arygos",
+    "region": 1,
+    "slug": "arygos",
+    "timezone": "America/New_York",
+    "type": "NORMAL",
+  },
+  {
+    "category": "United States",
+    "crlm": 1070,
+    "id": 1070,
+    "locale": "enUS",
+    "name": "Alexstrasza",
+    "region": 1,
+    "slug": "alexstrasza",
+    "timezone": "America/Chicago",
+    "type": "NORMAL",
+  },
+  {
+    "category": "United States",
+    "crlm": 1070,
+    "id": 1563,
+    "locale": "enUS",
+    "name": "Terokkar",
+    "region": 1,
+    "slug": "terokkar",
+    "timezone": "America/Chicago",
+    "type": "NORMAL",
+  },
+]
+`;

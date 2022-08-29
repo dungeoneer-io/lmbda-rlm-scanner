@@ -1,0 +1,192 @@
+[
+    {
+        "_links": {
+          "self": {
+            "href": "https://us.api.blizzard.com/data/wow/connected-realm/11?namespace=dynamic-us"
+          }
+        },
+        "id": 11,
+        "has_queue": false,
+        "status": {
+          "type": "UP",
+          "name": "Up"
+        },
+        "population": {
+          "type": "FULL",
+          "name": "Full"
+        },
+        "realms": [
+          {
+            "id": 11,
+            "region": {
+              "key": {
+                "href": "https://us.api.blizzard.com/data/wow/region/1?namespace=dynamic-us"
+              },
+              "name": "North America",
+              "id": 1
+            },
+            "connected_realm": {
+              "href": "https://us.api.blizzard.com/data/wow/connected-realm/11?namespace=dynamic-us"
+            },
+            "name": "Tichondrius",
+            "category": "United States",
+            "locale": "enUS",
+            "timezone": "America/Los_Angeles",
+            "type": {
+              "type": "NORMAL",
+              "name": "Normal"
+            },
+            "is_tournament": false,
+            "slug": "tichondrius"
+          }
+        ],
+        "mythic_leaderboards": {
+          "href": "https://us.api.blizzard.com/data/wow/connected-realm/11/mythic-leaderboard/?namespace=dynamic-us"
+        },
+        "auctions": {
+          "href": "https://us.api.blizzard.com/data/wow/connected-realm/11/auctions?namespace=dynamic-us"
+        }
+      },
+      {
+        "_links": {
+          "self": {
+            "href": "https://us.api.blizzard.com/data/wow/connected-realm/99?namespace=dynamic-us"
+          }
+        },
+        "id": 99,
+        "has_queue": false,
+        "status": {
+          "type": "UP",
+          "name": "Up"
+        },
+        "population": {
+          "type": "LOW",
+          "name": "Low"
+        },
+        "realms": [
+          {
+            "id": 99,
+            "region": {
+              "key": {
+                "href": "https://us.api.blizzard.com/data/wow/region/1?namespace=dynamic-us"
+              },
+              "name": "North America",
+              "id": 1
+            },
+            "connected_realm": {
+              "href": "https://us.api.blizzard.com/data/wow/connected-realm/99?namespace=dynamic-us"
+            },
+            "name": "Llane",
+            "category": "United States",
+            "locale": "enUS",
+            "timezone": "America/New_York",
+            "type": {
+              "type": "NORMAL",
+              "name": "Normal"
+            },
+            "is_tournament": false,
+            "slug": "llane"
+          },
+          {
+            "id": 1297,
+            "region": {
+              "key": {
+                "href": "https://us.api.blizzard.com/data/wow/region/1?namespace=dynamic-us"
+              },
+              "name": "North America",
+              "id": 1
+            },
+            "connected_realm": {
+              "href": "https://us.api.blizzard.com/data/wow/connected-realm/99?namespace=dynamic-us"
+            },
+            "name": "Arygos",
+            "category": "United States",
+            "locale": "enUS",
+            "timezone": "America/New_York",
+            "type": {
+              "type": "NORMAL",
+              "name": "Normal"
+            },
+            "is_tournament": false,
+            "slug": "arygos"
+          }
+        ],
+        "mythic_leaderboards": {
+          "href": "https://us.api.blizzard.com/data/wow/connected-realm/99/mythic-leaderboard/?namespace=dynamic-us"
+        },
+        "auctions": {
+          "href": "https://us.api.blizzard.com/data/wow/connected-realm/99/auctions?namespace=dynamic-us"
+        }
+      },
+      {
+        "_links": {
+          "self": {
+            "href": "https://us.api.blizzard.com/data/wow/connected-realm/1070?namespace=dynamic-us"
+          }
+        },
+        "id": 1070,
+        "has_queue": false,
+        "status": {
+          "type": "UP",
+          "name": "Up"
+        },
+        "population": {
+          "type": "LOW",
+          "name": "Low"
+        },
+        "realms": [
+          {
+            "id": 1070,
+            "region": {
+              "key": {
+                "href": "https://us.api.blizzard.com/data/wow/region/1?namespace=dynamic-us"
+              },
+              "name": "North America",
+              "id": 1
+            },
+            "connected_realm": {
+              "href": "https://us.api.blizzard.com/data/wow/connected-realm/1070?namespace=dynamic-us"
+            },
+            "name": "Alexstrasza",
+            "category": "United States",
+            "locale": "enUS",
+            "timezone": "America/Chicago",
+            "type": {
+              "type": "NORMAL",
+              "name": "Normal"
+            },
+            "is_tournament": false,
+            "slug": "alexstrasza"
+          },
+          {
+            "id": 1563,
+            "region": {
+              "key": {
+                "href": "https://us.api.blizzard.com/data/wow/region/1?namespace=dynamic-us"
+              },
+              "name": "North America",
+              "id": 1
+            },
+            "connected_realm": {
+              "href": "https://us.api.blizzard.com/data/wow/connected-realm/1070?namespace=dynamic-us"
+            },
+            "name": "Terokkar",
+            "category": "United States",
+            "locale": "enUS",
+            "timezone": "America/Chicago",
+            "type": {
+              "type": "NORMAL",
+              "name": "Normal"
+            },
+            "is_tournament": false,
+            "slug": "terokkar"
+          }
+        ],
+        "mythic_leaderboards": {
+          "href": "https://us.api.blizzard.com/data/wow/connected-realm/1070/mythic-leaderboard/?namespace=dynamic-us"
+        },
+        "auctions": {
+          "href": "https://us.api.blizzard.com/data/wow/connected-realm/1070/auctions?namespace=dynamic-us"
+        }
+      }
+]

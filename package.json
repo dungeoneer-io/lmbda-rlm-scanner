@@ -5,17 +5,15 @@
     "mongodb": "^3.6.2",
     "statman-stopwatch": "^2.11.1"
   },
-  "private": true,
-  "name": "aws-lambda-explore-1",
+  "name": "lmda-rlm-scanner",
   "version": "1.0.0",
-  "main": "local-run.js",
   "scripts": {
     "local": "node ./src/local-run.js",
     "test": "jest"
   },
   "author": "",
   "license": "ISC",
-  "description": "",
+  "description": "Obtains snapshots, harvests unique entities, and generates entity events for: CONNECTED REALM and REALM",
   "devDependencies": {
     "jest": "^29.0.1"
   }

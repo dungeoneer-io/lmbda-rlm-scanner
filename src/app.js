@@ -28,12 +28,12 @@ const doScanProcess = async (getLiveSnapshot = true) => {
     if (getLiveSnapshot) {
         crealmSnapshot = await procureLiveCrealmSnapshot();
     } else {
-        crealmSnapshot = {}; //stub for later
+        crealmSnapshot = {};
     }
 
     await upsertCrealmEntitiesFromSnapshot(crealmSnapshot);
     await upsertRealmEntitiesFromSnapshot(crealmSnapshot);
-    /*      Still need to find entity events, somehow?       */
+
     return 'OK';
 };
 
