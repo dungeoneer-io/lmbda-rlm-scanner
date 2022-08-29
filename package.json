@@ -1,0 +1,22 @@
+{
+  "dependencies": {
+    "blizzard.js": "^4.2.0",
+    "cli-progress": "^3.8.2",
+    "mongodb": "^3.6.2",
+    "statman-stopwatch": "^2.11.1"
+  },
+  "private": true,
+  "name": "aws-lambda-explore-1",
+  "version": "1.0.0",
+  "main": "local-run.js",
+  "scripts": {
+    "local": "node ./src/local-run.js",
+    "test": "jest"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "jest": "^29.0.1"
+  }
+}
