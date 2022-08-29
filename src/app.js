@@ -1,4 +1,5 @@
 const Stopwatch = require('statman-stopwatch');
+const { ObjectId } = require('mongodb');
 const { connectToBlizzard, getWowConnectedRealm } = require('./utils/dio-blizz');
 const { getDb, initDb } = require('./utils/dio-mongo');
 const queueUntilResolved = require('./utils/queue-until-resolved');
@@ -19,22 +20,33 @@ const COLLECTION_NAMES = {
     ZEPHYR_LOGS: 'ZephyrEvents'
 };
 
-const doScanProcess = async (getLiveSnapshot = true) => {
+const doScanProcess = async ({ snapshotId } = {}) => {
     await initDb();
     debugLog('Dungeoneer.io Scrape CREALM INFO');
     await connectToBlizzard();
     
     let crealmSnapshot;
-    if (getLiveSnapshot) {
+    if (!snapshotId) {
         crealmSnapshot = await procureLiveCrealmSnapshot();
     } else {
-        crealmSnapshot = {};
+        crealmSnapshot = await fetchSnapshotById(snapshotId);
     }
 
     await upsertCrealmEntitiesFromSnapshot(crealmSnapshot);
     await upsertRealmEntitiesFromSnapshot(crealmSnapshot);
 
     return 'OK';
+};
+
+const fetchSnapshotById = async (snapshotId) => {
+    const snapshotCollection = await getDb()
+        .db(MONGO_DB_NAME)
+        .collection(COLLECTION_NAMES.SNAPSHOTS);
+
+    debugLog(`retrieving snapshot id ${ snapshotId }`);
+    const snapshot = await snapshotCollection.findOne({ _id: new ObjectId(snapshotId) });
+
+    return snapshot;
 };
 
 const insertBlizzardEntityEventArray = async (entityArray, event = 'ADDED') => {

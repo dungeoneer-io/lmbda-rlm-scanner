@@ -1,10 +1,10 @@
 const scan = require('./src/app');
 
-exports.handler = async () => {
-    const p = await scan();
+exports.handler = async (e) => {
+    const p = await scan(e);
     const response = {
         statusCode: 200,
-        body: JSON.stringify(p);
+        body: JSON.stringify(p)
     };
 
     return response;

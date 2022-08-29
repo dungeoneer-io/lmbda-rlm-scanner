@@ -10,6 +10,7 @@ console.log('                  /____/               Scan to Mongo Local Utility'
 const doProcess = async () => {
     
     console.log('starting.');
+    // await scan({ snapshotId: '630c080dfe4dd7359414078e' });
     await scan();
     console.log('success.');
     process.exit(0);
