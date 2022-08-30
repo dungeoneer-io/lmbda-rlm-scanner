@@ -3,14 +3,9 @@ let blizzard;
 let wowClient;
 let currentPeriod;
 let currentSeason;
-const os = require('os');
 
-const secretKeeper = require(`${os.homedir()}/.shhh-zephyr.json`).blizzapi;
-
-const {
-  key,
-  secret
-} = secretKeeper;
+const key = process.env.ZEPHYR_BLIZZARD_API_KEY;
+const secret = process.env.ZEPHYR_BLIZARD_API_SECRET;
 
 const updateCurrentSeason = () => blizzard.wow.mythicDungeonKeystone('season', { token })
   .then((res) => {

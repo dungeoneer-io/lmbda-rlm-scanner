@@ -15,6 +15,7 @@
   "license": "ISC",
   "description": "Obtains snapshots, harvests unique entities, and generates entity events for: CONNECTED REALM and REALM",
   "devDependencies": {
+    "dotenv": "^16.0.1",
     "jest": "^29.0.1"
   }
 }

@@ -1,10 +1,9 @@
 const assert = require('assert');
 const client = require('mongodb').MongoClient;
-const os = require('os');
 
 let _db;
 
-const MONGO_CONNECTION_STRING = require(`${os.homedir()}/.shhh-zephyr.json`).mongocon.zephyr;
+const MONGO_CONNECTION_STRING = process.env.ZEPHYR_BLIZZDATA_MONGO_CONSTRING;
 
 function initDb() {
   if (_db) {
