@@ -2,9 +2,8 @@ name: Send to Lambda
 
 on: [push]
 
---- 
 jobs: 
-  release: 
+  lmbda: 
     runs-on: ubuntu-latest
     steps: 
       - uses: actions/checkout@v2
