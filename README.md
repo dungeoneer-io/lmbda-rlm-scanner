@@ -1,6 +1,12 @@
 # lmda-rlm-scanner
 Obtains snapshots, harvests unique entities, and generates entity events for: Connected Realms and Realms
 
+### Working With This
+- Clone, `npm i`
+- `npm run local` to fire the lambda method locally
+- `npm run test` to run through jest tests written
+- Deploys to lambda on commit push to `main` branch on github
+
 ### What to Have
 - Blizzard API Developer Account and API Key+Secret
 - AWS Account, Access to create Lambda Functions
@@ -25,7 +31,9 @@ Lambda Function Using:
 - Add projects secrets to github repo `AWS_ACCESS_KEY_ID` and `AWS_SECRET_ACCESS_KEY`
 - Will need to have a named lambda function already created by the name in deploy yml. `lmda-rlm-scanner` here
 - Pre-made lambda is going to need environment variables on board, also make local uncommitted .env with those same values. It'll make sure local runs work
+- Create Event Rule in Amazon EventBridge to kick off the named lambda every day
 
+        Much of this will be in a Terraform file so it doesn't need to be done manually
 ```
 ZEPHYR_BLIZZDATA_MONGO_CONSTRING="VALUEHERE"
 ZEPHYR_BLIZZARD_API_KEY="VALUEHERE"

@@ -8,7 +8,7 @@
   "name": "lmda-rlm-scanner",
   "version": "1.0.0",
   "scripts": {
-    "local": "node ./src/local-run.js",
+    "local": "node ./local-run.js",
     "test": "jest"
   },
   "author": "",
