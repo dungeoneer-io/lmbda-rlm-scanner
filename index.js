@@ -22,7 +22,9 @@ const COLLECTION_NAMES = {
 
 exports.handler = async ({ snapshotId } = {}) => {
     await initDb();
-    debugLog('Dungeoneer.io Scrape CREALM INFO');
+    debugLog('Dungeoneer.io');
+    debugLog('lmda-run-scanner');
+    debugLog('================');
     await connectToBlizzard();
     
     let crealmSnapshot;
