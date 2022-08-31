@@ -125,7 +125,17 @@ const upsertRealmEntitiesFromSnapshot = async (snapshot) => {
                 }
             });
     });
-    await batch.execute();    
+    const results = await batch.execute();
+
+    const { nUpserted, upserted } = results.result;
+    if (nUpserted === 0) return;
+
+    const blizzardEntities = upserted.map(({ _id }) => ({
+        id: _id,
+        type: 'REALM'
+    }));
+    debugLog(`transmitting ${ nUpserted } entity events...`);
+    await insertBlizzardEntityEventArray(blizzardEntities);
 };
 
 const procureLiveCrealmSnapshot = async () => {
