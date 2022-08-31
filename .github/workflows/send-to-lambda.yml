@@ -1,0 +1,13 @@
+name: Send to Lambda
+
+on: [push]
+
+jobs:
+#  test:
+#    runs-on: ubuntu-latest
+#    steps: ...
+
+#  publish:
+#    runs-on: ubuntu-latest
+#    needs: test
+#    steps: ...
