@@ -3,6 +3,33 @@ name: Send to Lambda
 on: [push]
 
 jobs:
+  release:
+    name: Deploy the lambda
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Use Node 15
+        uses: actions/setup-node@v2
+      with:
+        node-version: 15.x
+      - name: npm i
+        run: |
+          npm install --only=prod
+      - name: Dial-in to AWS
+      uses: aws-actions/configure-aws-credentials@v1
+      with:
+        aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        aws-region: us-east-1
+        role-duration-seconds: 1200
+        role-session-name: github-action-lmda-rlm-scanner
+      - name: zip it
+        run: |
+          zip -r9 lambda.zip .
+      - name: AWS Deploy
+        run: |
+          aws lambda update-function-code --function-name lmda-rlm-scanner --zip-file fileb://lambda.zip
 #  test:
 #    runs-on: ubuntu-latest
 #    steps: ...
