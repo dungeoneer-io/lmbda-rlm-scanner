@@ -12,7 +12,7 @@ jobs:
         with: 
           node-version: 15.x
       - name: "npm i"
-        run: "npm install --only=prod\n"
+        run: "npm install --only=prod"
       - name: "Dial-in to AWS"
         uses: aws-actions/configure-aws-credentials@v1
         with: 
@@ -22,6 +22,11 @@ jobs:
           role-duration-seconds: 1200
           role-session-name: github-action-lmda-rlm-scanner
       - name: "zip it"
-        run: "zip -r9 lambda.zip .\n"
+        run: "zip -r9 lambda.zip ."
       - name: "AWS Deploy"
         run: "aws lambda update-function-code --function-name lmda-rlm-scanner --zip-file fileb://lambda.zip\n"
+      - name: "Send Notification"
+        uses: dungeoneer-io/sc-discord-notification-action@v1.0
+        with:
+          who: Grim
+          message: SUCCESS! Latest `main` branch changes to [lmda-rlm-scanner](https://www.google.com) have been deployed to AWS Lambda (function name=lmda-rlm-scanner)
