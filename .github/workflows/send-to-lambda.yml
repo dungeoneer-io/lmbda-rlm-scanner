@@ -29,4 +29,4 @@ jobs:
         uses: dungeoneer-io/sc-discord-notification-action@v1.3
         with:
           webhook: "${{ secrets.DISCORD_NOTIFICATION_WEBHOOK }}"
-          message: SUCCESS! Latest `main` branch changes to [lmda-rlm-scanner](https://www.google.com) have been deployed to AWS Lambda (function name=lmda-rlm-scanner)
+          message: SUCCESS! Latest `main` branch changes to [lmda-rlm-scanner](https://github.com/dungeoneer-io/lmda-rlm-scanner) have been deployed to AWS Lambda (function name=lmda-rlm-scanner)
