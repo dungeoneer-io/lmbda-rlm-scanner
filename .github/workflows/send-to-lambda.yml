@@ -29,4 +29,4 @@ jobs:
         uses: dungeoneer-io/sc-discord-notification-action@v1.3
         with:
           webhook: "${{ secrets.DISCORD_NOTIFICATION_WEBHOOK }}"
-          message: ":green_circle: **lmda-rlm-scanner** lambda deployed\n```\n:wizard: ${{ github.event.head_commit.message }}\n```\n"
+          message: ":green_circle: **lmda-rlm-scanner** lambda deployed\n```\n${{ github.event.head_commit.message }}\n```\n\n"
