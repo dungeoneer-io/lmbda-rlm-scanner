@@ -28,7 +28,7 @@ Lambda Function Using:
 
 ### Plugging into the Cloud
 - Deploy to github to leverage GitHub Actions written in .github\workflows
-- Add projects secrets to github repo `AWS_ACCESS_KEY_ID` and `AWS_SECRET_ACCESS_KEY`
+- Add projects secrets to github repo `AWS_ACCESS_KEY_ID`, `DISCORD_NOTIFICATION_WEBHOOK`, and `AWS_SECRET_ACCESS_KEY`
 - Will need to have a named lambda function already created by the name in deploy yml. `lmda-rlm-scanner` here
 - Pre-made lambda is going to need environment variables on board, also make local uncommitted .env with those same values. It'll make sure local runs work
 - Create Event Rule in Amazon EventBridge to kick off the named lambda every day
