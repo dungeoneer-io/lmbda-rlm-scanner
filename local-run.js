@@ -12,13 +12,13 @@ const doProcess = async () => {
     
     console.log('starting.');
     // await handler({ snapshotId: '630c080dfe4dd7359414078e' });
-    // await handler();
-    await handler(undefined, {
-        functionName: 'lmda-rlm-scanner',
-        functionVersion: '1',
-        invokedFunctionArn: 'arn:aws:lambda:us-east-2:123456789012:function:my-function:1',
-        awsRequestId: '957785581411254272'
-    });
+    await handler();
+    // await handler(undefined, {
+    //     functionName: 'lmda-rlm-scanner',
+    //     functionVersion: '1',
+    //     invokedFunctionArn: 'fd',
+    //     awsRequestId: 'dsf'
+    // });
     console.log('success.');
     process.exit(0);
 };
