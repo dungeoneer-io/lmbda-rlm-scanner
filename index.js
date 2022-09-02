@@ -44,6 +44,7 @@ exports.handler = async ({ snapshotId } = {}, context) => {
             body: 'OK'
         };
     } catch (e) {
+        debugLog(`failed: ${e.message}`);
         let lambdaInfo = '';
         if (context) {
             const {
