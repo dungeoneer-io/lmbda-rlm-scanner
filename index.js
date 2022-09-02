@@ -22,6 +22,17 @@ const COLLECTION_NAMES = {
 };
 
 exports.handler = async ({ snapshotId } = {}, context) => {
+    let lambdaInfo;
+    if (context) {
+        const {
+            functionName,
+            functionVersion,
+            invokedFunctionArn,
+            awsRequestId
+        } = context;
+        lambdaInfo = `:anger: ${functionName}@v${functionVersion}\nARN: \`${invokedFunctionArn}\`\nAWS Request ID: \`${awsRequestId}\``;
+    }
+
     try {
         await initDb();
         debugLog('Dungeoneer.io');
@@ -39,22 +50,15 @@ exports.handler = async ({ snapshotId } = {}, context) => {
         await upsertCrealmEntitiesFromSnapshot(crealmSnapshot);
         await upsertRealmEntitiesFromSnapshot(crealmSnapshot);
 
+        if (context) {
+            await sendDiscordNotification(`:green_circle: **lmda-rlm-scanner** successful lambda run\n${lambdaInfo}`);
+        }
         return {
             statusCode: 200,
             body: 'OK'
         };
     } catch (e) {
         debugLog(`failed: ${e.message}`);
-        let lambdaInfo = '';
-        if (context) {
-            const {
-                functionName,
-                functionVersion,
-                invokedFunctionArn,
-                awsRequestId
-            } = context;
-            lambdaInfo = `:anger: ${functionName}@v${functionVersion}\nARN: \`${invokedFunctionArn}\`\nAWS Request ID: \`${awsRequestId}\``;
-        }
         await sendDiscordNotification(`:red_circle: **lmda-rlm-scanner** responding 500\n\`\`\`\n${e.message}\n\`\`\`\n${lambdaInfo}`);
         return {
             statusCode: 500,
