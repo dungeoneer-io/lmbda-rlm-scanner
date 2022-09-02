@@ -28,7 +28,7 @@ exports.handler = async ({ snapshotId } = {}, context) => {
         debugLog('lmda-run-scanner');
         debugLog('================');
         await connectToBlizzard();
-        const a = b.c;
+
         let crealmSnapshot;
         if (!snapshotId) {
             crealmSnapshot = await procureLiveCrealmSnapshot();
