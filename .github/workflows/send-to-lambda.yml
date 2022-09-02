@@ -24,9 +24,9 @@ jobs:
       - name: "zip it"
         run: "zip -r9 lambda.zip ."
       - name: "AWS Deploy"
-        run: "aws lambda update-function-code --function-name lmda-rlm-scanner --zip-file fileb://lambda.zip\n"
+        run: "aws lambda update-function-code --function-name lmda-rlm-scanner --zip-file fileb://lambda.zip"
       - name: "Send Notification"
         uses: dungeoneer-io/sc-discord-notification-action@v1.3
         with:
           webhook: "${{ secrets.DISCORD_NOTIFICATION_WEBHOOK }}"
-          message: SUCCESS! Latest `main` branch changes to [lmda-rlm-scanner](https://github.com/dungeoneer-io/lmda-rlm-scanner) have been deployed to AWS Lambda (function name=lmda-rlm-scanner)
+          message: ":green_circle: **lmda-rlm-scanner** lambda deployed\n```\n:wizard: ${{ github.event.head_commit.message }}\n```\n"

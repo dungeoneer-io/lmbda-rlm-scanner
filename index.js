@@ -8,6 +8,7 @@ const {
     convertIndexResultsToCrlmSnapshot,
     extractAllRealmsFromCrlmSnapshot
 } = require('./src/bapi-mapper/connected-realm-snapshot');
+const { sendDiscordNotification } = require('./src/utils/dio-util');
 
 const debugging = true;
 const debugLog = (log) => debugging && console.log(log);
@@ -20,29 +21,45 @@ const COLLECTION_NAMES = {
     ZEPHYR_LOGS: 'ZephyrEvents'
 };
 
-exports.handler = async ({ snapshotId } = {}) => {
-    await initDb();
-    debugLog('Dungeoneer.io');
-    debugLog('lmda-run-scanner');
-    debugLog('================');
-    await connectToBlizzard();
+exports.handler = async ({ snapshotId } = {}, context) => {
+    try {
+        await initDb();
+        debugLog('Dungeoneer.io');
+        debugLog('lmda-run-scanner');
+        debugLog('================');
+        await connectToBlizzard();
+        const a = b.c;
+        let crealmSnapshot;
+        if (!snapshotId) {
+            crealmSnapshot = await procureLiveCrealmSnapshot();
+        } else {
+            crealmSnapshot = await fetchSnapshotById(snapshotId);
+        }
     
-    let crealmSnapshot;
-    if (!snapshotId) {
-        crealmSnapshot = await procureLiveCrealmSnapshot();
-    } else {
-        crealmSnapshot = await fetchSnapshotById(snapshotId);
+        await upsertCrealmEntitiesFromSnapshot(crealmSnapshot);
+        await upsertRealmEntitiesFromSnapshot(crealmSnapshot);
+
+        return {
+            statusCode: 200,
+            body: 'OK'
+        };
+    } catch (e) {
+        let lambdaInfo = '';
+        if (context) {
+            const {
+                functionName,
+                functionVersion,
+                invokedFunctionArn,
+                awsRequestId
+            } = context;
+            lambdaInfo = `:anger: ${functionName}@v${functionVersion}\nARN: \`${invokedFunctionArn}\`\nAWS Request ID: \`${awsRequestId}\``;
+        }
+        await sendDiscordNotification(`:red_circle: **lmda-rlm-scanner** responding 500\n\`\`\`\n${e.message}\n\`\`\`\n${lambdaInfo}`);
+        return {
+            statusCode: 500,
+            body: 'FAILED'
+        }
     }
-
-    await upsertCrealmEntitiesFromSnapshot(crealmSnapshot);
-    await upsertRealmEntitiesFromSnapshot(crealmSnapshot);
-
-    const response = {
-        statusCode: 200,
-        body: "OK"
-    };
-
-    return response;
 };
 
 const fetchSnapshotById = async (snapshotId) => {
