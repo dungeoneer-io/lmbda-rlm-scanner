@@ -1,4 +1,6 @@
-const { getDb } = require('./utils/dio-mongo');
+const {
+    getDb
+} = require('@dungeoneer-io/nodejs-utils');
 const {
     COLLECTIONS,
     DATABASES,

@@ -1,10 +1,7 @@
 {
   "dependencies": {
-    "@vercel/ncc": "^0.34.0",
-    "blizzard.js": "^4.2.0",
-    "cli-progress": "^3.8.2",
-    "mongodb": "^3.6.2",
-    "statman-stopwatch": "^2.11.1"
+    "@dungeoneer-io/nodejs-utils": "^1.0.0",
+    "@vercel/ncc": "^0.34.0"
   },
   "name": "lmda-rlm-scanner",
   "version": "1.0.0",

@@ -1,11 +1,15 @@
 const { ObjectId } = require('mongodb');
-const { getWowConnectedRealm } = require('./utils/dio-blizz');
-const queueUntilResolved = require('./utils/queue-until-resolved');
-const { getRealmList } = require('./utils/blizz-entity-transforms');
+const {
+    getWowConnectedRealm,
+    queueUntilResolved,
+    getRealmList,
+    getDb
+} = require('@dungeoneer-io/nodejs-utils');
+
 const {
     convertIndexResultsToCrlmSnapshot
 } = require('./bapi-mapper/connected-realm-snapshot');
-const { getDb } = require('./utils/dio-mongo');
+
 const {
     COLLECTIONS,
     DATABASES

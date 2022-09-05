@@ -34,10 +34,7 @@ Lambda Function Using:
 - Create Event Rule in Amazon EventBridge to kick off the named lambda every day
 
         Much of this will be in a Terraform file so it doesn't need to be done manually
-```
-ZEPHYR_BLIZZDATA_MONGO_CONSTRING="VALUEHERE"
-ZEPHYR_BLIZZARD_API_KEY="VALUEHERE"
-ZEPHYR_BLIZARD_API_SECRET="VALUEHERE"
-DISCORD_NOTIFICATION_WEBHOOK="(optional)"
-```
 - Pre-made lambda timeout increased to like 15 seconds
+
+### @dungeoneer-io/nodejs-utils
+See [@dungeoneer-io/nodejs-utils](https://github.com/dungeoneer-io/nodejs-utils) for hints on how to configure environment variables in dotenv
