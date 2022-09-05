@@ -16,7 +16,7 @@ const harvestAndUpsertRlmData = async (lambdaEvent) => {
 
 exports.handler = async (event = {}, context) => {
     console.log('Dungeoneer.io');
-    console.log('lmda-run-scanner');
+    console.log('lmda-rlm-scanner');
     console.log('================');
 
     await lambdaTry200Catch500({
