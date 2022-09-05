@@ -10,7 +10,7 @@
   "version": "1.0.0",
   "scripts": {
     "local": "node ./local-run.js",
-    "build": "ncc build ./src/index.js -m -o ./",
+    "build": "ncc build ./src/index.js -m -o dist",
     "test": "jest"
   },
   "author": "",

@@ -27,9 +27,9 @@ jobs:
       - name: "ncc build"
         run: "npm run build"
       - name: "zip it"
-        run: "zip lambda.zip ./index.js"
+        run: "cd dist && zip lambda.zip ./index.js"
       - name: "AWS Deploy"
-        run: "aws lambda update-function-code --function-name lmda-rlm-scanner --zip-file fileb://lambda.zip"
+        run: "aws lambda update-function-code --function-name lmda-rlm-scanner --zip-file fileb://dist/lambda.zip"
       - name: "Send Notification"
         uses: dungeoneer-io/sc-discord-notification-action@v1.3
         with:
