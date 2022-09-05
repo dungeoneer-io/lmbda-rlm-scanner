@@ -24,6 +24,8 @@ jobs:
           aws-secret-access-key: "${{ secrets.AWS_SECRET_ACCESS_KEY }}"
           role-duration-seconds: 1200
           role-session-name: github-action-lmda-rlm-scanner
+      - name: "ncc build"
+        run: "npm run build"
       - name: "zip it"
         run: "zip dist/index.js lambda.zip ."
       - name: "AWS Deploy"
