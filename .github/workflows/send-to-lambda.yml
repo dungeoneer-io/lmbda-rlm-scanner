@@ -27,7 +27,7 @@ jobs:
       - name: "ncc build"
         run: "npm run build"
       - name: "zip it"
-        run: "zip ./dist/index.js lambda.zip"
+        run: "zip lambda.zip ./dist/index.js"
       - name: "AWS Deploy"
         run: "aws lambda update-function-code --function-name lmda-rlm-scanner --zip-file fileb://lambda.zip"
       - name: "Send Notification"
