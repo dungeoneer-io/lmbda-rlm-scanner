@@ -25,7 +25,7 @@ jobs:
           role-duration-seconds: 1200
           role-session-name: github-action-lmda-rlm-scanner
       - name: "zip it"
-        run: "zip -r9 lambda.zip ."
+        run: "zip dist/index.js lambda.zip ."
       - name: "AWS Deploy"
         run: "aws lambda update-function-code --function-name lmda-rlm-scanner --zip-file fileb://lambda.zip"
       - name: "Send Notification"

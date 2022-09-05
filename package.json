@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "@vercel/ncc": "^0.34.0",
     "blizzard.js": "^4.2.0",
     "cli-progress": "^3.8.2",
     "mongodb": "^3.6.2",
@@ -9,6 +10,7 @@
   "version": "1.0.0",
   "scripts": {
     "local": "node ./local-run.js",
+    "build": "ncc build index.js -m -o dist",
     "test": "jest"
   },
   "author": "",
@@ -19,4 +21,3 @@
     "jest": "^29.0.1"
   }
 }
-
