@@ -1,5 +1,5 @@
 require('dotenv').config();
-const { handler } = require('./index');
+const { handler } = require('./src/index');
 
 console.log('    ____                                                      _     ');
 console.log('   / __ \\__  ______  ____  ___  ____  ____  ___  ___  _____  (_)___ ');
