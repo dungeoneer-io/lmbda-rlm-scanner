@@ -54,7 +54,7 @@ const fetchSnapshotById = async (snapshotId) => {
         .db(DATABASES.DEFAULT)
         .collection(COLLECTIONS.SNAPSHOTS);
 
-    console.log('transmitting crealm snapshot...')(`retrieving snapshot id ${ snapshotId }`);
+    console.log(`retrieving snapshot id ${ snapshotId }`);
     const snapshot = await snapshotCollection.findOne({ _id: new ObjectId(snapshotId) });
 
     return snapshot;
