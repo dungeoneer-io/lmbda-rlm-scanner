@@ -1,6 +1,6 @@
 {
   "dependencies": {
-    "@dungeoneer-io/nodejs-utils": "^1.0.1",
+    "@dungeoneer-io/nodejs-utils": "^2.0.0",
     "@vercel/ncc": "^0.34.0"
   },
   "name": "lmda-rlm-scanner",
